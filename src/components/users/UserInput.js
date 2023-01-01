@@ -8,12 +8,26 @@ class UserInput extends Component {
         password: ""
     }
 
+    onChangeHandlerUsername = (event) => {
+        this.setState({
+            username: event.target.value
+        })
+    }
+
+    onChangeHandlerPassword = (event) => {
+        this.setState({
+            password: event.target.value
+        })
+    }
+
     render() {
         return(
         <div>
             <form>
-                <input />
-                <input />
+                <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.username} type="text"/>
+                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.password} type="text"/>
+                <br></br>
+                <input type="submit" />
             </form>
         </div>
         )
