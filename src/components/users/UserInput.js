@@ -20,12 +20,16 @@ class UserInput extends Component {
         })
     }
 
+    onSubmitHandler = (event) => {
+        event.preventDefault()
+    }
+
     render() {
         return(
         <div>
-            <form>
+            <form onSubmit={this.onSubmitHandler}>
                 <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.username} type="text"/>
-                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.password} type="text"/>
+                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.password} type="password"/>
                 <br></br>
                 <input type="submit" />
             </form>
