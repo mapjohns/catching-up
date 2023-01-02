@@ -1,11 +1,13 @@
 import React, { Component } from "react"
+import Post from "./Post"
 
 class Posts extends Component {
 
-    render() {
+    renderPosts = () => this.props.posts.map(post => <Post key={post} post={post} />)
 
+    render() {
         return (
-        <div>TEST</div>
+        this.renderPosts()
         )
     }
 
