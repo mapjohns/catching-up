@@ -7,5 +7,4 @@ export default function managePosts(state = { posts: [] }, action) {
         default:
             return state
     }
-    return state
 }
