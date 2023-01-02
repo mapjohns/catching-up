@@ -1,6 +1,8 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import User from './components/users/User';
+import UserInput from './components/users/UserInput'
+import PostInput from './components/posts/PostInput';
+
 
 class App extends Component{
 
@@ -8,6 +10,8 @@ class App extends Component{
     return(
       <div>
       <User />
+      <UserInput />
+      <PostInput />
       </div>
     )
   }
