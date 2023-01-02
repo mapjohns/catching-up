@@ -15,13 +15,17 @@ class PostInput extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault()
+        this.props.addPost(this.state)
+        this.setState({
+            message: ""
+          })
     }
 
     render() {
         return(
         <div>
             <form onSubmit={this.onSubmitHandler}>
-                <h4>Message:</h4><input onChange={this.onChangeHandlerPost} value={this.state.username} type="text"/>
+                <h4>Message:</h4><input onChange={this.onChangeHandlerPost} value={this.state.message} type="text"/>
                 <br></br>
                 <input type="submit" />
             </form>
