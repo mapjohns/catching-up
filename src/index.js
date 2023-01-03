@@ -8,9 +8,10 @@ import thunk from "redux-thunk";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import User from './components/users/User'
 import managePosts from './reducers/managePosts';
+import manageUsers from './reducers/manageUsers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(managePosts, applyMiddleware(thunk))
+const store = createStore(manageUsers, applyMiddleware(thunk))
 
 root.render(
   <React.StrictMode>
