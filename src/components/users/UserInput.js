@@ -32,7 +32,7 @@ class UserInput extends Component {
                 <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.username} type="text"/>
                 <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.password} type="password"/>
                 <br></br>
-                <input type="submit" />
+                <input type="submit" value="Sign-up"/>
             </form>
         </div>
         )
