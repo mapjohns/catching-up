@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import User from './components/users/User';
-import UserInput from './components/users/UserInput'
-import PostInput from './components/posts/PostInput';
 import PostsContainer from './containers/PostsContainer';
-
+import UsersContainer from './containers/UsersContainer';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavBar from './components/NavBar';
 
 class App extends Component{
 
   render() {
     return(
       <div>
-      <User />
-      <UserInput />
-      <PostsContainer />
+    <Router>
+      <NavBar />
+      <Route exact path="/" component={UsersContainer} />
+      <Route exact path="/posts" component={PostsContainer} />
+    </Router>
       </div>
     )
   }
