@@ -8,6 +8,7 @@ class UsersContainer extends Component {
     render() {
         return (
           <div>
+            Your ID Number is: {this.props.userID}
             <UserInput returnUser={this.props.createUser}/>
           </div>
         )
@@ -18,4 +19,11 @@ const mapDispatchToProps = (dispatch) => {
     return { createUser: username => dispatch(createUser({username})) }
 }
 
-export default connect(null, mapDispatchToProps)(UsersContainer)
+const mapStateToProps = (state) => {
+  return {
+    userID : state.users.users
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
