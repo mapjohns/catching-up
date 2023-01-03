@@ -8,6 +8,7 @@ import thunk from "redux-thunk";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import User from './components/users/User'
 import combinedReducer from './reducers/combinedReducer';
+import NavBar from './components/NavBar'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
     <Router>
+      <NavBar />
       <Route exact path="/" component={User} />
       <App />
     </Router>
