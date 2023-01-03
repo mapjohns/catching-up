@@ -1,7 +1,7 @@
-export function createUser() {
+export function createUser(test) {
+    let newVar = test
     return (dispatch) => {
-        dispatch({ type: "RETURNING_USER" });
-        debugger
+        // dispatch({ type: "RETURNING_USER" });
         fetch('http://localhost:3000/users', {
             method: "POST",
             headers: {
@@ -9,10 +9,11 @@ export function createUser() {
                 "Accept": "application/json"
             },
                 body: JSON.stringify({
-                    username: "HI I AM TEST"
+                    username: test.username.username,
+                    password: test.username.password
                 })
             })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then((user) => dispatch( {type: "TEST_USER", user: user }))
     }
 }
