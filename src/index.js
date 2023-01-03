@@ -7,11 +7,11 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import User from './components/users/User'
-import managePosts from './reducers/managePosts';
-import manageUsers from './reducers/manageUsers';
+import combinedReducer from './reducers/combinedReducer';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(manageUsers, applyMiddleware(thunk))
+const store = createStore(combinedReducer, applyMiddleware(thunk))
 
 root.render(
   <React.StrictMode>
