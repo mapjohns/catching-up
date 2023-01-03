@@ -1,10 +1,10 @@
 const usersReducer = (state = { users: [] }, action) => {
     switch (action.type) {
-      case "TEST_USER":
+      case "SAVE_USER_ID":
         debugger
         return {
           ...state,
-          users: [...state.users],
+          users: [action.user.id],
         };
       default:
         return state;
