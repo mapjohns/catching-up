@@ -15,6 +15,6 @@ export function createUser(test) {
                 })
             })
         .then(resp => resp.json())
-        .then((user) => dispatch( {type: "TEST_USER", user: user }))
+        .then((user) => dispatch( {type: "SAVE_USER_ID", user: user }))
     }
 }
