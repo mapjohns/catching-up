@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
     def create
-        binding.pry
+        post= Post.new(post_params)
+        post.save
+        render json: post, include: [:user], except: [:created_at, :updated_at]
     end
 
     private
