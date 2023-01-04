@@ -9,7 +9,7 @@ class PostsContainer extends Component {
     render() {
         return (
           <div>
-            <PostInput addPost={this.props.addPost} />
+            <PostInput addPost={this.props.addPost} userId={this.props.userId}/>
             <Posts posts={this.props.posts} />
           </div>
         )
@@ -17,6 +17,7 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // debugger
     return {posts: state.posts.posts,
             userId: state.users.users}
 }
