@@ -5,7 +5,10 @@ class Post extends Component {
     render() {
         // debugger
         return(
-            <p>{this.props.post.message}</p>
+            <div>
+            <h4>{this.props.username}</h4>
+            <p>{this.props.post}</p>
+            </div>
         )
     }
 }
