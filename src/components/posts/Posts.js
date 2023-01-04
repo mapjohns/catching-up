@@ -3,9 +3,10 @@ import Post from "./Post"
 
 class Posts extends Component {
 
-    renderPosts = () => this.props.posts.map(post => <Post key={post} post={post} />)
+    renderPosts = () => this.props.posts.map(post => <Post key={post.user} post={post.message} username={post.user.username} />)
 
     render() {
+        // debugger
         return (
         this.renderPosts()
         )
