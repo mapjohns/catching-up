@@ -1,6 +1,6 @@
 export function createPost(test) {
     let newVar = test
-    debugger
+    // debugger
     return (dispatch) => {
         fetch('http://localhost:3000/posts', {
             method: "POST",
@@ -10,12 +10,12 @@ export function createPost(test) {
             },
                 body: JSON.stringify({
                     post: {
-                    message: "TEST",
-                    user_id: ""
+                    message: test.message,
+                    user_id: test.user
                     }
                 })
             })
         .then(resp => resp.json())
-        .then((user) => dispatch( {type: "SAVE_USER_ID", user: user }))
+        .then((post) => dispatch( {type: "ADD_POST_STATE", post: post }))
     }
 }
