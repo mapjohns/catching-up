@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { connect } from 'react-redux';
 import PostInput from "../components/posts/PostInput";
 import Posts from "../components/posts/Posts"
+import { createPost } from "../actions/postAction";
 
 class PostsContainer extends Component {
 
@@ -13,15 +14,15 @@ class PostsContainer extends Component {
           </div>
         )
       }
-
 }
 
 const mapStateToProps = (state) => {
-    return {posts: state.posts.posts}
+    return {posts: state.posts.posts,
+            userId: state.users.users}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { addPost: message => dispatch({type: "ADD_POST", message: message})}
+    return { addPost: message => dispatch(createPost(message))}
 }
 
 
