@@ -36,7 +36,6 @@ class UserInput extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault()
-        debugger
         this.props.returnUser(this.state.create)
         this.setState({
             create: {
@@ -67,7 +66,7 @@ class UserInput extends Component {
 
     onSubmitHandlerLogin = (event) => {
         event.preventDefault()
-        this.props.returnUser(this.state.login)
+        this.props.loginUser(this.state.login)
         this.setState({
             username: "",
             password: ""
@@ -82,16 +81,16 @@ class UserInput extends Component {
             <br></br>
             <h5>Create an Account</h5>
             <form onSubmit={this.onSubmitHandler}>
-                <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.username} type="text"/>
-                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.password} type="password"/>
+                <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
+                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
                 <br></br>
                 <input type="submit" value="Sign-up"/>
             </form>
             <br></br>
             <h5>Log in with an existing account</h5>
-            <form onSubmit={this.onSubmitHandler}>
-                <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.username} type="text"/>
-                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.password} type="password"/>
+            <form onSubmit={this.onSubmitHandlerLogin}>
+                <h4>Username:</h4><input onChange={this.onChangeHandlerLoginUsername} value={this.state.login.username} type="text"/>
+                <h4>Password:</h4><input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
                 <br></br>
                 <input type="submit" value="Log in"/>
             </form>
