@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import UserInput from "../components/users/UserInput";
-import { createUser } from '../actions/userActions'
+import { createUser } from '../actions/userActions';
+import { loginUser } from "../actions/userLoginAction";
 
 class UsersContainer extends Component {
     
@@ -9,14 +10,15 @@ class UsersContainer extends Component {
         return (
           <div>
             Your ID Number is: {this.props.userID}
-            <UserInput returnUser={this.props.createUser}/>
+            <UserInput returnUser={this.props.createUser} loginUser={this.props.loginUser}/>
           </div>
         )
       }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { createUser: username => dispatch(createUser({username})) }
+    return { createUser: username => dispatch(createUser({username})) ,
+              loginUser: credentials => dispatch(loginUser({credentials}))}
 }
 
 const mapStateToProps = (state) => {
