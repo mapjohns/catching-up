@@ -5,11 +5,12 @@ class PostInput extends Component {
 
     state = {
         message: "",
+        user: this.props.userId[0]
     }
 
     onChangeHandlerPost = (event) => {
         this.setState({
-            message: event.target.value
+            message: event.target.value,
         })
     }
 
