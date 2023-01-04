@@ -23,6 +23,10 @@ class UserInput extends Component {
     onSubmitHandler = (event) => {
         event.preventDefault()
         this.props.returnUser(this.state)
+        this.setState({
+            username: "",
+            password: ""
+        })
     }
 
     render() {
