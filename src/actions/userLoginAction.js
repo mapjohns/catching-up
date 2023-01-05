@@ -1,7 +1,7 @@
 export function loginUser(test) {
     let newVar = test
     return (dispatch) => {
-        fetch('http://localhost:3000/users/login', {
+        fetch('http://localhost:3000/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -9,8 +9,8 @@ export function loginUser(test) {
             },
                 body: JSON.stringify({
                     user: {
-                    username: test.username.username,
-                    password: test.username.password
+                    username: test.credentials.username,
+                    password: test.credentials.password
                     }
                 })
             })
