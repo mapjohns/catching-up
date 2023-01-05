@@ -12,7 +12,7 @@ class App extends Component{
     <Router>
       <NavBar />
       <Route exact path="/" component={UsersContainer} />
-      <Route exact path="/posts" component={PostsContainer} />
+      <Route path="/posts" render={routerProps => <PostsContainer {...routerProps} /> } />
     </Router>
       </div>
     )
