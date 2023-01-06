@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 class CommentInput extends Component {
 
     state = {
-        content: ""
+        content: "",
+        userID: this.props.userID
     }
 
     onChangeHandler = (event) => {
@@ -35,8 +36,14 @@ class CommentInput extends Component {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return { addComment: content => dispatch({type: "ADD_COMMENT", content: content})}
+const mapStateToProps = (state) => {
+    return {
+        userID : state.users.users
+    }
 }
 
-export default connect(null, mapDispatchToProps)(CommentInput)
+const mapDispatchToProps = (dispatch) => {
+    return { addComment: content => dispatch({type: "ADD_COMMENT", content: content }) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentInput)
