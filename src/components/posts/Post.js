@@ -14,7 +14,7 @@ class Post extends Component {
             <Link key={`post${this.props.postId}`} to={`${this.props.match.url}/all/post/${this.props.postId}`}>
               Reply
             </Link>
-            <Route path={`${this.props.match.url}/all/post/${this.props.postId}`} render={() => <CommentInput /> } />
+            <Route path={`${this.props.match.url}/all/post/${this.props.postId}`} render={() => <CommentInput postID={this.props.postId} /> } />
             </div>
         )
     }

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-
+import { createComment } from "../../actions/commentAction";
 
 class CommentInput extends Component {
 
     state = {
         content: "",
-        userID: this.props.userID
+        userID: this.props.userID,
+        postID: this.props.postID
     }
 
     onChangeHandler = (event) => {
@@ -43,7 +44,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { addComment: content => dispatch({type: "ADD_COMMENT", content: content }) }
+    return { addComment: content => dispatch(createComment(content)) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentInput)
