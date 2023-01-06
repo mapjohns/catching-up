@@ -16,6 +16,7 @@ class CommentInput extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault()
+        this.props.addComment(this.state)
         this.setState({
             content: ""
         })
@@ -23,9 +24,9 @@ class CommentInput extends Component {
 
     render() {
         return(
-            <form>
+            <form onSubmit={this.onSubmitHandler}>
                 <input onChange={this.onChangeHandler} value={this.state.content} type="text"/>
-                <input  type="submit"/>
+                <input type="submit"/>
             </form>
         )
 
@@ -35,7 +36,7 @@ class CommentInput extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { addComment: () => dispatch({type: "ADD_COMMENT"})}
+    return { addComment: content => dispatch({type: "ADD_COMMENT", content: content})}
 }
 
 export default connect(null, mapDispatchToProps)(CommentInput)
