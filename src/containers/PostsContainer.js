@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 class PostsContainer extends Component {
 
     render() {
-      // debugger
         return (
           <div>
             <PostInput addPost={this.props.addPost} userId={this.props.userId}/>
@@ -17,7 +16,7 @@ class PostsContainer extends Component {
             <Link key={"TEST"} to={`${this.props.match.url}/all`}>
               See All Posts
             </Link>
-            <Route path={`${this.props.match.url}/all`} render={() => <Posts posts={this.props.posts}/> } />
+            <Route path={`${this.props.match.url}/all`} render={() => <Posts match={this.props.match} posts={this.props.posts}/> } />
 
           </div>
         )
