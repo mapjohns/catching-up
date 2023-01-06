@@ -1,12 +1,14 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 
 class CommentInput extends Component {
 
-    debugger
-    render() {
 
+
+    render() {
         return(
+            
         )
 
     }
@@ -14,4 +16,8 @@ class CommentInput extends Component {
 
 }
 
-export default CommentInput
+const mapDispatchToProps = (dispatch) => {
+    return { addComment: () => dispatch({type: "ADD_COMMENT"})}
+}
+
+export default connect(null, mapDispatchToProps)(CommentInput)
