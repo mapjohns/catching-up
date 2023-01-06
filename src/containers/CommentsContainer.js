@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import CommentInput from "../components/comments/CommentInput";
+import Comments from "../components/comments/Comments";
 
 class CommentsContainer extends Component {
 
-    woof = () => {
-        console.log("woof")
-    }
-    
     render() {
         return(
-        <div>TEST
-            <CommentInput woofs={() => console.log("WOOF")} />
-        </div>
+            <Comments postID={this.props.postID} comments={this.props.comments}/>
         )
     }
 
 }
 
-export default CommentsContainer
+const mapStateToProps = (state) => {
+    return {comments: state.comments.comments}
+}
+
+export default connect(mapStateToProps)(CommentsContainer)
