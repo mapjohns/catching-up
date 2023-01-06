@@ -68,9 +68,17 @@ class UserInput extends Component {
         event.preventDefault()
         this.props.loginUser(this.state.login)
         this.setState({
+            login: {
             username: "",
             password: ""
+            }
         })
+    }
+
+    onSubmitHandlerLogOut = (event) => {
+        event.preventDefault()
+        this.props.logoutUser()
+        
     }
 
 
@@ -93,6 +101,10 @@ class UserInput extends Component {
                 <h4>Password:</h4><input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
                 <br></br>
                 <input type="submit" value="Log in"/>
+            </form>
+            <br></br>
+            <form onSubmit={this.onSubmitHandlerLogOut}>
+                <input type="submit" value="Log out" />
             </form>
         </div>
         )
