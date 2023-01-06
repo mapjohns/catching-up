@@ -10,7 +10,7 @@ class UsersContainer extends Component {
         return (
           <div>
             Your ID Number is: {this.props.userID}
-            <UserInput returnUser={this.props.createUser} loginUser={this.props.loginUser}/>
+            <UserInput returnUser={this.props.createUser} loginUser={this.props.loginUser} logoutUser={this.props.logoutUser}/>
           </div>
         )
       }
@@ -18,7 +18,8 @@ class UsersContainer extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return { createUser: username => dispatch(createUser({username})) ,
-              loginUser: credentials => dispatch(loginUser({credentials}))}
+              loginUser: credentials => dispatch(loginUser({credentials})),
+              logoutUser: () => dispatch({type: "LOG_OUT_USER"})}
 }
 
 const mapStateToProps = (state) => {
