@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import CommentInput from "../comments/CommentInput";
 
 class Post extends Component {
 
