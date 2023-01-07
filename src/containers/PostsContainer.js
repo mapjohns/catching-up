@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { connect } from 'react-redux';
 import PostInput from "../components/posts/PostInput";
 import Posts from "../components/posts/Posts"
-import { createPost } from "../actions/postAction";
+import * as postActions from "../actions/postAction"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -30,7 +30,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { addPost: message => dispatch(createPost(message))}
+    return { addPost: message => dispatch(postActions.createPost(message)),
+             updatePost: message => dispatch(postActions.editPost(message))}
 }
 
 
