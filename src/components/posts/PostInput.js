@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { connect } from 'react-redux';
+import * as postActions from "/home/mapjohns/Development/NewFolder/Phase5/P5Project/project/catching-up/src/actions/postAction.js"
 
 class PostInput extends Component {
 
@@ -16,6 +17,7 @@ class PostInput extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault()
+        debugger
         this.props.addPost(this.state)
         this.setState({
             message: ""
@@ -36,4 +38,15 @@ class PostInput extends Component {
 
 }
 
-export default PostInput
+const mapStateToProps = (state) => {
+    return {userId: state.users.users}
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return { 
+    // addPost: message => dispatch(postActions.createPost(message)),
+            updatePost: message => dispatch(postActions.editPost(message))}
+}
+
+  
+export default connect(mapStateToProps, mapDispatchToProps)(PostInput)
