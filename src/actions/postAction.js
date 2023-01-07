@@ -24,16 +24,17 @@ function editPost(test) {
     let newVar = test
     debugger
     return (dispatch) => {
-        fetch(`http://localhost:3000/posts/${123}`, {
-            method: "POST",
+        fetch(`http://localhost:3000/posts/${test.post}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
                 body: JSON.stringify({
                     post: {
+                    post_id: test.post,
                     message: test.message,
-                    user_id: test.user
+                    user_id: test.user,
                     }
                 })
             })
