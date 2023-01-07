@@ -9,7 +9,7 @@ class Comments extends Component {
 
     render() {
         return(
-            <div>TEST</div>
+            this.renderComments()
         )
     }
 }
