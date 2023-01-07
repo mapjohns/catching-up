@@ -12,6 +12,10 @@ class PostsController < ApplicationController
         render json: post, include: [:user], except: [:created_at, :updated_at]
     end
 
+    def destroy
+        binding.pry
+    end
+
 
     private
 
