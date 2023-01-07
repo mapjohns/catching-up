@@ -18,8 +18,8 @@ export default function managePosts(state = { posts: [] }, action) {
                                                         )
                                                             };
         case "DELETE_POST_STATE":
-            debugger
-        ;
+            // debugger
+            return {...state, posts: state.posts.filter((post) => post.post_id !== action.test)};
         default:
             return state
     }
