@@ -9,7 +9,8 @@ class Posts extends Component {
                               key={`post${post.post_id}`} 
                               post={post.message} 
                               username={post.user.username} 
-                              postId={post.post_id}/>
+                              postId={post.post_id}
+                              deletePost={this.props.deletePost}/>
                               )
 
     render() {
