@@ -13,7 +13,8 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        binding.pry
+        post = Post.find_by(id: params[:id])
+        post.destroy
     end
 
 
