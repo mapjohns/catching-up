@@ -39,7 +39,7 @@ function editPost(test) {
                 })
             })
         .then(resp => resp.json())
-        .then((post) => dispatch( {type: "ADD_POST_STATE", post: post }))
+        .then((post) => dispatch( {type: "UPDATE_POST_STATE", post: post }))
     }
 }
 
