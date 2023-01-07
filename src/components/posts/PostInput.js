@@ -17,18 +17,26 @@ class PostInput extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault()
-        debugger
+        if (!!this.props.edit) {
+            const post = {message: this.state.message, user: this.state.user, post: this.props.postID}
+            this.props.updatePost(post)
+            this.setState({
+                message: ""
+              })
+        }
+        else {
         this.props.addPost(this.state)
         this.setState({
             message: ""
           })
+        }
     }
 
     render() {
         return(
         <div>
             <form onSubmit={this.onSubmitHandler}>
-                <h4>Message:</h4><input onChange={this.onChangeHandlerPost} value={this.state.message} type="text"/>
+                <h4>Post:</h4><input onChange={this.onChangeHandlerPost} value={this.state.message} type="text"/>
                 <br></br>
                 <input type="submit" />
             </form>
@@ -44,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-    // addPost: message => dispatch(postActions.createPost(message)),
+    addPost: message => dispatch(postActions.createPost(message)),
             updatePost: message => dispatch(postActions.editPost(message))}
 }
 
