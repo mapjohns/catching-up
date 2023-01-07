@@ -15,7 +15,7 @@ class PostsContainer extends Component {
             <Link key={"TEST"} to={`${this.props.match.url}/all`}>
               See All Posts
             </Link>
-            <Route path={`${this.props.match.url}/all`} render={() => <Posts match={this.props.match} posts={this.props.posts}/> } />
+            <Route path={`${this.props.match.url}/all`} render={() => <Posts match={this.props.match} posts={this.props.posts} deletePost={this.props.deletePost}/> } />
 
           </div>
         )
@@ -30,7 +30,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return { addPost: message => dispatch(postActions.createPost(message)),
-             updatePost: message => dispatch(postActions.editPost(message))}
+             updatePost: message => dispatch(postActions.editPost(message)),
+             deletePost: message => dispatch(postActions.deletePost(message))
+            }
 }
 
 
