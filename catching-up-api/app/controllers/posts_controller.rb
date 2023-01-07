@@ -6,14 +6,16 @@ class PostsController < ApplicationController
         render json: post, include: [:user], except: [:created_at, :updated_at]
     end
 
-    def edit
-        binding.pry
+    def update
+        post = Post.find_by(id: post_params[:post_id])
+        post.update(:message => post_params[:message])
+        render json: post, include: [:user], except: [:created_at, :updated_at]
     end
 
 
     private
 
     def post_params
-        params.require(:post).permit(:message, :user_id)
+        params.require(:post).permit(:message, :user_id, :post_id)
     end
 end
