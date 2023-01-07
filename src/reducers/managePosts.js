@@ -16,7 +16,9 @@ export default function managePosts(state = { posts: [] }, action) {
                                                                     }
                                                                 }
                                                         )
-                                                            }
+                                                            };
+        case "DELETE_POST_STATE":
+            debugger
         ;
         default:
             return state
