@@ -7,16 +7,20 @@ import CommentsContainer from "../../containers/CommentsContainer";
 class Post extends Component {
 
     render() {
-        // debugger
         return(
             <div>
             <h4>{this.props.username}</h4>
             <p>{this.props.post}</p>
-            <CommentsContainer postID={this.props.postId}/>
+            <Route path={`${this.props.match.url}/all/post/${this.props.postId}/comments`} render={() => <CommentsContainer postID={this.props.postId}/>} />
+            <Link key={`post${this.props.postId}comments`} to={`${this.props.match.url}/all/post/${this.props.postId}/comments`}>
+            Show Comments
+            </Link>
+            <br></br>
             <Link key={`post${this.props.postId}`} to={`${this.props.match.url}/all/post/${this.props.postId}`}>
               Reply
             </Link>
-            <Route path={`${this.props.match.url}/all/post/${this.props.postId}`} render={() => <CommentInput postID={this.props.postId} /> } />
+            <Route exact path={`${this.props.match.url}/all/post/${this.props.postId}`} render={() => <CommentInput postID={this.props.postId} /> } />
+            <br></br>
             </div>
         )
     }
