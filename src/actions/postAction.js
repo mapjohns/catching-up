@@ -22,7 +22,7 @@ function createPost(test) {
 
 function editPost(test) {
     let newVar = test
-    debugger
+    // debugger
     return (dispatch) => {
         fetch(`http://localhost:3000/posts/${test.post}`, {
             method: "PATCH",
@@ -43,4 +43,11 @@ function editPost(test) {
     }
 }
 
-export { createPost, editPost };
+function deletePost(test) {
+    fetch(`http://localhost:3000/posts/${123}`, {
+        method: 'DELETE',
+    })
+    .then((test) => dispatch( {type: "DELETE_POST_STATE", test: test} ))
+}
+
+export { createPost, editPost, deletePost};
