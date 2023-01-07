@@ -12,7 +12,6 @@ class PostsContainer extends Component {
         return (
           <div>
             <PostInput addPost={this.props.addPost} userId={this.props.userId}/>
-            {/* <Posts posts={this.props.posts} /> */}
             <Link key={"TEST"} to={`${this.props.match.url}/all`}>
               See All Posts
             </Link>
