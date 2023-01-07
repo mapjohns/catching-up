@@ -44,10 +44,13 @@ function editPost(test) {
 }
 
 function deletePost(test) {
-    fetch(`http://localhost:3000/posts/${123}`, {
+    // debugger
+    return (dispatch) => {
+        dispatch({ type: "DELETE_POST_STATE", test: test });
+        fetch(`http://localhost:3000/posts/${test}`, {
         method: 'DELETE',
     })
-    .then((test) => dispatch( {type: "DELETE_POST_STATE", test: test} ))
+    }
 }
 
 export { createPost, editPost, deletePost};
