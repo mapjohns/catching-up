@@ -17,6 +17,11 @@ class Post extends Component {
             </Link>
             <Route path={`${this.props.match.url}/all/post/${this.props.postId}/edit`} render={() => <PostInput postID={this.props.postId} edit={"Edit"}/> } /><br></br>
 
+            <Link key={`post${this.props.postId}delete`} to={`${this.props.match.url}/all/post/${this.props.postId}/delete`}>
+            Delete
+            </Link>
+            <Route path={`${this.props.match.url}/all/post/${this.props.postId}/delete`} render={() => this.props.deletePost(this.props.postId)} />
+
             <Route path={`${this.props.match.url}/all/post/${this.props.postId}/comments`} render={() => <CommentsContainer postID={this.props.postId}/>} />
             <Link key={`post${this.props.postId}comments`} to={`${this.props.match.url}/all/post/${this.props.postId}/comments`}>
             Show Comments
