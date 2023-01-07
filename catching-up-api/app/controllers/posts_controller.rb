@@ -6,6 +6,11 @@ class PostsController < ApplicationController
         render json: post, include: [:user], except: [:created_at, :updated_at]
     end
 
+    def edit
+        binding.pry
+    end
+
+
     private
 
     def post_params
