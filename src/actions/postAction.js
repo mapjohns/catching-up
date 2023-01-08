@@ -2,7 +2,7 @@ function fetchPosts() {
     return (dispatch) => {
         fetch("http://localhost:3000/posts")
         .then(resp => resp.json())
-        .then((posts) => dispatch({type: "ADD_POST_STATE", posts: posts}))
+        .then((posts) => dispatch({type: "ADD_POSTS_STATE", posts: posts}))
     }
 }
 
