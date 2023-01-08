@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PostsContainer from './containers/PostsContainer';
-import UsersContainer from './containers/UsersContainer';
+import UsersContainer from './containers/UsersContainer'
+import UserInput from './components/users/UserInput'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
@@ -19,8 +20,9 @@ class App extends Component{
       <div>
     <Router>
       <NavBar />
-      <Route exact path="/" component={UsersContainer} />
+      <Route exact path="/" render={() => <UserInput />} />
       <Route path="/posts" render={routerProps => <PostsContainer {...routerProps} /> } />
+      <Route path="/profile" render={routerProps => <UsersContainer {...routerProps} />} />
     </Router>
       </div>
     )
