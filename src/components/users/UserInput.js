@@ -80,7 +80,7 @@ class UserInput extends Component {
 
     onSubmitHandlerLogOut = (event) => {
         event.preventDefault()
-        this.props.logoutUser()
+        this.props.logoutUser(this.props.userID)
         
     }
 
@@ -119,12 +119,14 @@ class UserInput extends Component {
 const mapDispatchToProps = (dispatch) => {
     return { createUser: username => dispatch(createUser({username})) ,
               loginUser: credentials => dispatch(loginUser({credentials})),
-              logoutUser: () => dispatch({type: "LOG_OUT_USER"})}
+              logoutUser: userId => dispatch({type: "LOG_OUT_USER", userId: userId})}
 }
 
 const mapStateToProps = (state) => {
+    // debugger
   return {
-    userID : state.users.users
+    userID : state.users.users.id,
+    loggedIn: state.users.users.loggedIn
   }
 }
 
