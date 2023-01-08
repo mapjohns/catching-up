@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { createUser } from '../../actions/userActions';
+import { loginUser } from "../../actions/userLoginAction";
 
 
 class UserInput extends Component {
@@ -88,6 +91,7 @@ class UserInput extends Component {
             <h4>Please Sign-up or Log in below!</h4>
             <br></br>
             <h5>Create an Account</h5>
+            <h6>Your ID number is: {this.props.userID}</h6>
             <form onSubmit={this.onSubmitHandler}>
                 <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
                 <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
@@ -112,4 +116,17 @@ class UserInput extends Component {
 
 }
 
-export default UserInput
+const mapDispatchToProps = (dispatch) => {
+    return { createUser: username => dispatch(createUser({username})) ,
+              loginUser: credentials => dispatch(loginUser({credentials})),
+              logoutUser: () => dispatch({type: "LOG_OUT_USER"})}
+}
+
+const mapStateToProps = (state) => {
+  return {
+    userID : state.users.users
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserInput)
