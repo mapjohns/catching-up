@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import * as postActions from "/home/mapjohns/Development/NewFolder/Phase5/P5Project/project/catching-up/src/actions/postAction.js"
+import * as postActions from "../../actions/postAction"
 
 class PostInput extends Component {
 
