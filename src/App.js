@@ -3,8 +3,14 @@ import PostsContainer from './containers/PostsContainer';
 import UsersContainer from './containers/UsersContainer';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar';
+import { connect } from 'react-redux';
+import { fetchPosts } from './actions/postAction';
 
 class App extends Component{
+
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
 
   render() {
     return(
@@ -19,4 +25,10 @@ class App extends Component{
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchPosts: () => dispatch(fetchPosts()),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App)
