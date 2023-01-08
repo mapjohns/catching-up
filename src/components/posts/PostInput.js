@@ -6,7 +6,7 @@ class PostInput extends Component {
 
     state = {
         message: "",
-        user: this.props.userId[0]
+        user: this.props.userId
     }
 
     onChangeHandlerPost = (event) => {
@@ -47,7 +47,7 @@ class PostInput extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {userId: state.users.users}
+    return {userId: state.users.users.id}
 }
 
 const mapDispatchToProps = (dispatch) => {

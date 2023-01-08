@@ -20,7 +20,7 @@ function createComment(test) {
                 body: JSON.stringify({
                     comment: {
                     content: test.content,
-                    user_id: test.userID[0],
+                    user_id: test.userID,
                     post_id: test.postID
                     }
                 })

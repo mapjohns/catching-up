@@ -39,7 +39,7 @@ class CommentInput extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        userID : state.users.users
+        userID : state.users.users.id
     }
 }
 
