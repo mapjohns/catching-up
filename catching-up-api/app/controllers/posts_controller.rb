@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+    def index
+        binding.pry
+    end
+    
     def create
         post= Post.new(post_params)
         post.save
