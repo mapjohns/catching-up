@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
     def index
-        binding.pry
+        posts = Post.all
+        render json: posts, include: [:user, :comments], except: [:created_at, :updated_at]
     end
     
     def create
