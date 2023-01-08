@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
 import { fetchPosts } from './actions/postAction';
+import { fetchComments } from './actions/commentAction';
 
 class App extends Component{
 
   componentDidMount() {
     this.props.fetchPosts();
+    this.props.fetchComments();
   }
 
   render() {
@@ -28,6 +30,7 @@ class App extends Component{
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
+    fetchComments: () => dispatch(fetchComments())
   }
 }
 
