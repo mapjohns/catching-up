@@ -1,4 +1,13 @@
-export function createComment(test) {
+function fetchComments() {
+    return (dispatch) => {
+        fetch("http://localhost:3000/comments")
+        .then(resp => resp.json())
+        .then((comments) => dispatch({type: "ADD_COMMENTS_STATE", comments: comments}))
+    }
+}
+
+
+function createComment(test) {
     let newVar = test
     // debugger
     return (dispatch) => {
@@ -20,3 +29,5 @@ export function createComment(test) {
         .then((comment) => dispatch( {type: "ADD_COMMENT_STATE", comment: comment }))
     }
 }
+
+export {fetchComments, createComment};
