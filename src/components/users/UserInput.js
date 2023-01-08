@@ -87,30 +87,31 @@ class UserInput extends Component {
 
     render() {
         return(
-        <div>
-            <h4>Please Sign-up or Log in below!</h4>
-            <br></br>
-            <h5>Create an Account</h5>
-            <h6>Your ID number is: {this.props.userID}</h6>
-            <form onSubmit={this.onSubmitHandler}>
-                <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
-                <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
+            this.props.loggedIn === undefined ? 
+                <div><h4>Please Sign-up or Log in below!</h4>
                 <br></br>
-                <input type="submit" value="Sign-up"/>
-            </form>
-            <br></br>
-            <h5>Log in with an existing account</h5>
-            <form onSubmit={this.onSubmitHandlerLogin}>
-                <h4>Username:</h4><input onChange={this.onChangeHandlerLoginUsername} value={this.state.login.username} type="text"/>
-                <h4>Password:</h4><input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
+                <h5>Create an Account</h5>
+                <h6>Your ID number is: {this.props.userID}</h6>
+                <form onSubmit={this.onSubmitHandler}>
+                    <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
+                    <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
+                    <br></br>
+                    <input type="submit" value="Sign-up"/>
+                </form>
                 <br></br>
-                <input type="submit" value="Log in"/>
-            </form>
-            <br></br>
-            <form onSubmit={this.onSubmitHandlerLogOut}>
-                <input type="submit" value="Log out" />
-            </form>
-        </div>
+                <h5>Log in with an existing account</h5>
+                <form onSubmit={this.onSubmitHandlerLogin}>
+                    <h4>Username:</h4><input onChange={this.onChangeHandlerLoginUsername} value={this.state.login.username} type="text"/>
+                    <h4>Password:</h4><input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
+                    <br></br>
+                    <input type="submit" value="Log in"/>
+                </form></div>
+            : 
+                <div>
+                <form onSubmit={this.onSubmitHandlerLogOut}>
+                    <input type="submit" value="Log out" />
+                </form>
+                </div>
         )
     }
 
