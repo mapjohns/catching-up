@@ -1,3 +1,11 @@
+function fetchPosts() {
+    return (dispatch) => {
+        fetch("http://localhost:3000/posts")
+        .then(resp => resp.json())
+        .then((posts) => dispatch({type: "ADD_POST_STATE", posts: posts}))
+    }
+}
+
 function createPost(test) {
     let newVar = test
     // debugger
@@ -53,4 +61,4 @@ function deletePost(test) {
     }
 }
 
-export { createPost, editPost, deletePost};
+export {fetchPosts, createPost, editPost, deletePost};
