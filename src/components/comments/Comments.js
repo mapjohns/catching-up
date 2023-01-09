@@ -3,13 +3,16 @@ import Comment from "./Comment"
 
 class Comments extends Component {
     
-    renderComments = () => this.props.comments.filter(object => object.postID === this.props.postID).map(comment => <Comment key={comment.commentID} content={comment.content} />)
+    renderComments = () => this.props.comments.filter(object => object.postID === this.props.postID).map(comment => <Comment key={comment.commentID} content={comment.content} username={comment.username}/>)
 
 
 
     render() {
         return(
-            this.renderComments()
+            <div>
+            <h6>Comments:</h6>
+            {this.renderComments()}
+            </div>
         )
     }
 }
