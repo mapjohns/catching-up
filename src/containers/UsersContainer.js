@@ -19,7 +19,8 @@ const mapStateToProps = (state) => {
   // debugger
   return {
     userID : state.users.user.id,
-    user: state.users.user
+    user: state.users.user,
+    users: state.users.users
   }
 }
 
