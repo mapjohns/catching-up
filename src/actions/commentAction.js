@@ -30,4 +30,9 @@ function createComment(test) {
     }
 }
 
-export {fetchComments, createComment};
+function updateComment(test) {
+    debugger
+    
+}
+
+export {fetchComments, createComment, updateComment};
