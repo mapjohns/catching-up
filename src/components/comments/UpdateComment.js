@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { updateComment } from "../../actions/commentAction"
+import { updateComment, deleteComment } from "../../actions/commentAction"
 
 class UpdateComment extends Component {
 
@@ -22,6 +22,11 @@ class UpdateComment extends Component {
         this.props.updateComment(this.state)
     }
 
+    onSubmitHandlerDelete = (event) => {
+        event.preventDefault()
+        this.props.deleteComment(this.props.commentID)
+    }
+
     render() {
         return(
             <div>
@@ -32,6 +37,9 @@ class UpdateComment extends Component {
                     <input type="submit"
                            value="Update"/>
                 </form>
+                <form onSubmit={this.onSubmitHandlerDelete} >
+                    <input type="submit" value="Delete"/>
+                </form>
             </div>
         )
     }
@@ -40,7 +48,8 @@ class UpdateComment extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-        updateComment: content => dispatch(updateComment(content))}
+        updateComment: content => dispatch(updateComment(content)),
+        deleteComment: comment => dispatch(deleteComment(comment))}
 }
 
 export default connect(null, mapDispatchToProps)(UpdateComment)
