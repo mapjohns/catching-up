@@ -17,7 +17,6 @@ const usersReducer = (state = { user: [], users: [] }, action) => {
           ...state,
           user: [],
         };
-      
       case "UPDATE_USER_INFO":
         return {
           ...state,
@@ -27,11 +26,19 @@ const usersReducer = (state = { user: [], users: [] }, action) => {
                   description: action.user.description,
                   loggedIn: true
           }
-        }
-      ;
+        };
+      case "ADD_USERS_STATE":
+        // debugger
+        const users = action.users.map(user => ({user: {id: user.id, 
+                                                 username: user.username}, 
+                                                 message: user.message}))
+        return {
+          ...state,
+          users: state.users.concat(users)
+        };
       default:
-        return state;
-    }
+        return state
+    };
   };
   
   export default usersReducer;
