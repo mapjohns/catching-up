@@ -30,6 +30,9 @@ export default function manageComments(state = { comments: [] }, action) {
             }
     )
         };
+        case "DELETE_COMMENT_STATE":
+            // debugger
+            return {...state, comments: state.comments.filter((comment) => comment.commentID !== action.test)}
         ;
         default:
             return state
