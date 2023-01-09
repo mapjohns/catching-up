@@ -4,6 +4,36 @@ import { updateComment } from "../../actions/commentAction"
 
 class UpdateComment extends Component {
 
+    state = {
+        userID: this.props.userID,
+        postID: this.props.postID,
+        content: this.props.content
+    }
+
+    onChangeHandler = (event) => {
+        this.setState({
+            content: event.target.value
+        })
+    }
+
+    onSubmitHandler = (event) => {
+        event.preventDefault()
+        this.props.updateComment(this.state)
+    }
+
+    render() {
+        return(
+            <div>
+                <form onSubmit={this.onSubmitHandler}>
+                    <input type="text"
+                           value={this.state.content}
+                           onChange={this.onChangeHandler}/>
+                    <input type="submit"
+                           value="Update"/>
+                </form>
+            </div>
+        )
+    }
 
 }
 
