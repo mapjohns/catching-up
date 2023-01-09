@@ -20,6 +20,16 @@ export default function manageComments(state = { comments: [] }, action) {
             }))
             // debugger
             return {...state, comments: state.comments.concat(comments)};
+        case "UPDATE_COMMENT_STATE":
+            return  {...state, comments: state.comments.map((comment) => {if (comment.commentID === action.comment.id) 
+                                                                            {comment.content = action.comment.content
+                                                                                return comment}
+                                                                            else {
+                                                                                return comment
+                                                                            }
+            }
+    )
+        };
         ;
         default:
             return state
