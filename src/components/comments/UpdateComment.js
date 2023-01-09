@@ -7,6 +7,7 @@ class UpdateComment extends Component {
     state = {
         userID: this.props.userID,
         postID: this.props.postID,
+        commentID: this.props.commentID,
         content: this.props.content
     }
 
