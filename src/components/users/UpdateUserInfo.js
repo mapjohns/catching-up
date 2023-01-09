@@ -1,4 +1,6 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { updateUser } from "../../actions/userActions";
 
 class UpdateUserInfo extends Component {
 
@@ -25,4 +27,9 @@ class UpdateUserInfo extends Component {
 
 }
 
-export default UpdateUserInfo
+const mapDispatchToProps = (dispatch) => {
+    return { editUser: userInfo => dispatch(updateUser())
+            }
+}
+
+export default connect(null, mapDispatchToProps)(UpdateUserInfo)
