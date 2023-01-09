@@ -1,4 +1,4 @@
-export function createUser(test) {
+function createUser(test) {
     let newVar = test
     return (dispatch) => {
         fetch('http://localhost:3000/users', {
@@ -18,3 +18,9 @@ export function createUser(test) {
         .then((user) => dispatch( {type: "SAVE_USER_ID", user: user }))
     }
 }
+
+function updateUser(test) {
+    debugger
+}
+
+export {createUser, updateUser};
