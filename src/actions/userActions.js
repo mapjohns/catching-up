@@ -1,3 +1,11 @@
+function fetchUsers() {
+    return (dispatch) => {
+        fetch('http://localhost:3000/users')
+        .then(resp => resp.json())
+        .then((users) => dispatch({type: "ADD_USERS_STATE", users: users}))
+    }
+}
+
 function createUser(test) {
     let newVar = test
     return (dispatch) => {
@@ -41,4 +49,4 @@ function updateUser(test) {
     }
 }
 
-export {createUser, updateUser};
+export {createUser, updateUser, fetchUsers};
