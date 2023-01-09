@@ -6,7 +6,8 @@ class UpdateUserInfo extends Component {
 
     state = {
         username: this.props.user.username,
-        description: this.props.user.description
+        description: this.props.user.description,
+        userID: this.props.user.id
     }
 
     onChangeHandlerUsername = (event) => {
@@ -21,10 +22,15 @@ class UpdateUserInfo extends Component {
         })
     }
 
+    onSubmitHandler = (event) => {
+        event.preventDefault()
+        this.props.updateUser(this.state)
+    }
+
     render() {
         return(
         <div>
-            <form>
+            <form onSubmit={this.onSubmitHandler}>
                 <input type="text"
                        placeholder={this.props.user.username}
                        value={this.state.username} 
@@ -42,7 +48,7 @@ class UpdateUserInfo extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { editUser: userInfo => dispatch(updateUser())
+    return { updateUser: userInfo => dispatch(updateUser(userInfo))
             }
 }
 
