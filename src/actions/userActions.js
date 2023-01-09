@@ -20,7 +20,25 @@ function createUser(test) {
 }
 
 function updateUser(test) {
-    debugger
+    // debugger
+    return (dispatch) => {
+        fetch(`http://localhost:3000/users/${test.userID}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+                body: JSON.stringify({
+                    user: {
+                    username: test.username,
+                    description: test.description,
+                    user_id: test.userID
+                    }
+                })
+            })
+        .then(resp => resp.json())
+        .then((user) => dispatch( {type: "UPDATE_USER_INFO", user: user }))
+    }
 }
 
 export {createUser, updateUser};
