@@ -8,14 +8,19 @@ class CommentsContainer extends Component {
 
     render() {
         return(
-            <Comments match={this.props.match} postID={this.props.postID} comments={this.props.comments} deleteComment={this.props.deleteComment}/>
+            <Comments match={this.props.match} 
+                      postID={this.props.postID} 
+                      comments={this.props.comments} 
+                      deleteComment={this.props.deleteComment}
+                      loggedUserID={this.props.userId}/>
         )
     }
 
 }
 
 const mapStateToProps = (state) => {
-    return {comments: state.comments.comments}
+    return {comments: state.comments.comments,
+            userId: state.users.users.id}
 }
 
 const mapDispatchToProps = (dispatch) => {
