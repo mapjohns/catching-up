@@ -10,7 +10,8 @@ class Comments extends Component {
                                                                                                                              commentID={comment.commentID}
                                                                                                                              userID={comment.userID}
                                                                                                                              match={this.props.match}
-                                                                                                                             deleteComment={this.props.deleteComment}/>)
+                                                                                                                             deleteComment={this.props.deleteComment}
+                                                                                                                             loggedUserID={this.props.loggedUserID}/>)
 
 
 
