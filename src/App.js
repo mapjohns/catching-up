@@ -7,12 +7,14 @@ import NavBar from './components/NavBar';
 import { connect } from 'react-redux';
 import { fetchPosts } from './actions/postAction';
 import { fetchComments } from './actions/commentAction';
+import { fetchUsers } from './actions/userActions'
 
 class App extends Component{
 
   componentDidMount() {
     this.props.fetchPosts();
     this.props.fetchComments();
+    this.props.fetchUsers();
   }
 
   render() {
@@ -32,7 +34,8 @@ class App extends Component{
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    fetchComments: () => dispatch(fetchComments())
+    fetchComments: () => dispatch(fetchComments()),
+    fetchUsers: () => dispatch(fetchUsers())
   }
 }
 
