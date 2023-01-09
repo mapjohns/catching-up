@@ -19,8 +19,10 @@ class CommentsContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {comments: state.comments.comments,
-            userId: state.users.users.id}
+    return {
+            comments: state.comments.comments,
+            userId: state.users.user.id
+        }
 }
 
 const mapDispatchToProps = (dispatch) => {

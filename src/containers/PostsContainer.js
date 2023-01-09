@@ -27,8 +27,10 @@ class PostsContainer extends Component {
 
 const mapStateToProps = (state) => {
   // debugger
-    return {posts: state.posts.posts,
-            userId: state.users.users.id}
+    return {
+            posts: state.posts.posts,
+            userId: state.users.user.id
+          }
 }
 
 const mapDispatchToProps = (dispatch) => {

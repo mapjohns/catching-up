@@ -47,13 +47,16 @@ class PostInput extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {userId: state.users.users.id}
+    return {
+            userId: state.users.user.id
+        }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-    addPost: message => dispatch(postActions.createPost(message)),
-            updatePost: message => dispatch(postActions.editPost(message))}
+            addPost: message => dispatch(postActions.createPost(message)),
+            updatePost: message => dispatch(postActions.editPost(message))
+    }
 }
 
   

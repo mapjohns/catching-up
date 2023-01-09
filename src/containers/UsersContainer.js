@@ -16,9 +16,10 @@ class UsersContainer extends Component {
 
 
 const mapStateToProps = (state) => {
+  // debugger
   return {
-    userID : state.users.users.id,
-    user: state.users.users
+    userID : state.users.user.id,
+    user: state.users.user
   }
 }
 

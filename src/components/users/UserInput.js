@@ -126,8 +126,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     // debugger
   return {
-    userID : state.users.users.id,
-    loggedIn: state.users.users.loggedIn
+    userID : state.users.user.id,
+    loggedIn: state.users.user.loggedIn
   }
 }
 
