@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     def index
         users = User.all
-        render json: users, include: [:posts, :comments] ,except[:password_digest, :created_at, :updated_at]
+        render json: users, include: [:posts, :comments], except: [:password_digest, :created_at, :updated_at]
     end
 
     def create
