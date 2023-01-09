@@ -53,4 +53,14 @@ function updateComment(test) {
     
 }
 
-export {fetchComments, createComment, updateComment};
+function deleteComment(test) {
+    // debugger
+    return (dispatch) => {
+        dispatch({ type: "DELETE_COMMENT_STATE", test: test });
+        fetch(`http://localhost:3000/comments/${test}`, {
+        method: 'DELETE',
+        })
+    }
+}
+
+export {fetchComments, createComment, updateComment, deleteComment};
