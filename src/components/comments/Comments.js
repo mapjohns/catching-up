@@ -8,6 +8,7 @@ class Comments extends Component {
                                                                                                                              username={comment.username}
                                                                                                                              postID={this.props.postID}
                                                                                                                              commentID={comment.commentID}
+                                                                                                                             userID={comment.userID}
                                                                                                                              match={this.props.match}/>)
 
 
