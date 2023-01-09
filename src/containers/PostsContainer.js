@@ -15,7 +15,10 @@ class PostsContainer extends Component {
             <Link key={"TEST"} to={`${this.props.match.url}/all`}>
               See All Posts
             </Link>
-            <Route path={`${this.props.match.url}/all`} render={() => <Posts match={this.props.match} posts={this.props.posts} deletePost={this.props.deletePost}/> } />
+            <Route path={`${this.props.match.url}/all`} render={() => <Posts match={this.props.match} 
+                                                                             posts={this.props.posts} 
+                                                                             deletePost={this.props.deletePost} 
+                                                                             loggedUserID={this.props.userId} /> } />
 
           </div>
         )
