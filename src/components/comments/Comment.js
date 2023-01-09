@@ -10,6 +10,9 @@ class Comment extends Component {
         return(
             <div>
             <p>{this.props.username}: {this.props.content}</p>
+            {this.props.loggedUserID === this.props.userID ? 
+
+            <div>
             <Route path={`${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}`} render={() => 
             <UpdateComment commentID={this.props.commentID} userID={this.props.userID} postID={this.props.postID} content={this.props.content}/>} />
 
@@ -21,6 +24,11 @@ class Comment extends Component {
             Delete
             </Link>
             <Route path={`${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}/delete`} render={() => this.props.deleteComment(this.props.commentID)} />
+            </div>
+            :
+            <div></div>
+            
+    }
             </div>
         )
     }
