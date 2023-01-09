@@ -10,7 +10,7 @@ class Comment extends Component {
         return(
             <div>
             <p>{this.props.username}: {this.props.content}</p>
-            <UpdateComment userID={this.props.userID} postID={this.props.postID} content={this.props.content}/>
+            <UpdateComment commentID={this.props.commentID} userID={this.props.userID} postID={this.props.postID} content={this.props.content}/>
             </div>
         )
     }
