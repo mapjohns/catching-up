@@ -31,7 +31,25 @@ function createComment(test) {
 }
 
 function updateComment(test) {
-    debugger
+    // debugger
+    return (dispatch) => {
+        fetch(`http://localhost:3000/comments/${test.commentID}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+                body: JSON.stringify({
+                    comment: {
+                    content: test.content,
+                    user_id: test.userID,
+                    post_id: test.postID
+                    }
+                })
+            })
+        .then(resp => resp.json())
+        .then((comment) => dispatch( {type: "UPDATE_COMMENT_STATE", comment: comment }))
+    }
     
 }
 
