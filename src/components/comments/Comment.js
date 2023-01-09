@@ -10,7 +10,17 @@ class Comment extends Component {
         return(
             <div>
             <p>{this.props.username}: {this.props.content}</p>
-            <UpdateComment commentID={this.props.commentID} userID={this.props.userID} postID={this.props.postID} content={this.props.content}/>
+            <Route path={`${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}`} render={() => 
+            <UpdateComment commentID={this.props.commentID} userID={this.props.userID} postID={this.props.postID} content={this.props.content}/>} />
+
+            <Link key={`post${this.props.postID}comments${this.props.commentID}`} to={`${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}`}>
+            Edit Comment
+            </Link><br></br>
+
+            <Link key={`post${this.props.postID}comments${this.props.commentID}/delete`} to={`${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}/delete`}>
+            Delete
+            </Link>
+            <Route path={`${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}/delete`} render={() => this.props.deleteComment(this.props.commentID)} />
             </div>
         )
     }
