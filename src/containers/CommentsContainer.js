@@ -6,7 +6,7 @@ class CommentsContainer extends Component {
 
     render() {
         return(
-            <Comments postID={this.props.postID} comments={this.props.comments}/>
+            <Comments match={this.props.match} postID={this.props.postID} comments={this.props.comments}/>
         )
     }
 
