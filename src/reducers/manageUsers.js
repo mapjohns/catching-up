@@ -1,11 +1,11 @@
-const usersReducer = (state = { users: [] }, action) => {
+const usersReducer = (state = { user: [], users: [] }, action) => {
     switch (action.type) {
       case "SAVE_USER_ID":
         // debugger
         return {
           ...state,
           // New Code
-          users: {id: action.user.id,
+          user: {id: action.user.id,
                   username: action.user.username,
                   description: action.user.description,
                   loggedIn: true
@@ -15,13 +15,13 @@ const usersReducer = (state = { users: [] }, action) => {
       case "LOG_OUT_USER":
         return {
           ...state,
-          users: [],
+          user: [],
         };
       
       case "UPDATE_USER_INFO":
         return {
           ...state,
-          users: {
+          user: {
                   id: action.user.id,
                   username: action.user.username,
                   description: action.user.description,
