@@ -8,7 +8,7 @@ class UsersContainer extends Component {
         return (
           <div>
             Your ID number is: {this.props.userID}
-            <User />
+            <User user={this.props.user}/>
           </div>
         )
       }
@@ -17,7 +17,8 @@ class UsersContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    userID : state.users.users.id
+    userID : state.users.users.id,
+    user: state.users.users
   }
 }
 
