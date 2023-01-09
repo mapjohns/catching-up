@@ -9,7 +9,8 @@ class Comments extends Component {
                                                                                                                              postID={this.props.postID}
                                                                                                                              commentID={comment.commentID}
                                                                                                                              userID={comment.userID}
-                                                                                                                             match={this.props.match}/>)
+                                                                                                                             match={this.props.match}
+                                                                                                                             deleteComment={this.props.deleteComment}/>)
 
 
 
