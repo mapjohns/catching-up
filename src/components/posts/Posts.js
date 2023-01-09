@@ -10,6 +10,8 @@ class Posts extends Component {
                               post={post.message} 
                               username={post.user.username} 
                               postId={post.post_id}
+                              userId={post.user.id}
+                              loggedUserID={this.props.loggedUserID}
                               deletePost={this.props.deletePost}/>
                               )
 
