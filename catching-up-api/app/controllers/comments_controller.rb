@@ -18,6 +18,11 @@ class CommentsController < ApplicationController
         render json: comment, except: [:created_at, :updated_at]
     end
 
+    def destroy
+        comment = Comment.find_by(id: params[:id])
+        comment.destroy
+    end
+
     private
     
     def comment_params
