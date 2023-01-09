@@ -8,19 +8,25 @@ import PostInput from "./PostInput";
 class Post extends Component {
 
     render() {
+        // debugger
         return(
             <div>
             <h4>{this.props.username}</h4>
             <p>{this.props.post}</p>
+            {this.props.loggedUserID === this.props.userId ? 
+            <div>
             <Link key={`post${this.props.postId}edit`} to={`${this.props.match.url}/all/post/${this.props.postId}/edit`}>
             Edit
             </Link>
             <Route path={`${this.props.match.url}/all/post/${this.props.postId}/edit`} render={() => <PostInput postID={this.props.postId} edit={"Edit"}/> } /><br></br>
-
             <Link key={`post${this.props.postId}delete`} to={`${this.props.match.url}/all/post/${this.props.postId}/delete`}>
             Delete
             </Link>
             <Route path={`${this.props.match.url}/all/post/${this.props.postId}/delete`} render={() => this.props.deletePost(this.props.postId)} />
+            </div>
+            :
+            <div></div>
+            }
 
             <Route path={`${this.props.match.url}/all/post/${this.props.postId}/comments`} render={() => <CommentsContainer postID={this.props.postId}/>} />
             <Link key={`post${this.props.postId}comments`} to={`${this.props.match.url}/all/post/${this.props.postId}/comments`}>
