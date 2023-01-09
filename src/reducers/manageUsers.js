@@ -16,7 +16,11 @@ const usersReducer = (state = { users: [] }, action) => {
         return {
           ...state,
           users: [],
-        }
+        };
+      
+      case "UPDATE_USER_INFO":
+        debugger
+      ;
       default:
         return state;
     }
