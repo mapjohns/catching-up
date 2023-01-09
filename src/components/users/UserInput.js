@@ -39,7 +39,7 @@ class UserInput extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault()
-        this.props.returnUser(this.state.create)
+        this.props.createUser(this.state.create)
         this.setState({
             create: {
             username: "",
