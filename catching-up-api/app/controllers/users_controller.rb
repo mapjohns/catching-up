@@ -6,6 +6,12 @@ class UsersController < ApplicationController
         render json: user, except: [:created_at, :updated_at]
     end
 
+    def update
+        user = User.find_by(id: params[:user][:user_id])
+        user.update(user_params)
+        render json: user, except: [:created_at, :updated_at]
+    end
+
     private
 
     def user_params
