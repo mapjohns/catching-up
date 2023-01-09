@@ -12,6 +12,12 @@ class CommentsController < ApplicationController
 
     end
 
+    def update
+        comment = Comment.find_by(id: params[:id])
+        comment.update(comment_params)
+        render json: comment, except: [:created_at, :updated_at]
+    end
+
     private
     
     def comment_params
