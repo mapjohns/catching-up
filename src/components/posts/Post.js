@@ -28,7 +28,7 @@ class Post extends Component {
             <div></div>
             }
 
-            <Route path={`${this.props.match.url}/all/post/${this.props.postId}/comments`} render={() => <CommentsContainer postID={this.props.postId}/>} />
+            <Route path={`${this.props.match.url}/all/post/${this.props.postId}/comments`} render={() => <CommentsContainer match={this.props.match} postID={this.props.postId}/>} />
             <Link key={`post${this.props.postId}comments`} to={`${this.props.match.url}/all/post/${this.props.postId}/comments`}>
             Show Comments
             </Link>
