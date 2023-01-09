@@ -9,16 +9,30 @@ class UpdateUserInfo extends Component {
         description: this.props.user.description
     }
 
+    onChangeHandlerUsername = (event) => {
+        this.setState({
+            username: event.target.value,
+        })
+    }
+
+    onChangeHandlerDescription = (event) => {
+        this.setState({
+            description: event.target.value,
+        })
+    }
+
     render() {
         return(
         <div>
             <form>
                 <input type="text"
                        placeholder={this.props.user.username}
-                       value={this.state.username} /><br></br>
+                       value={this.state.username} 
+                       onChange={this.onChangeHandlerUsername}/><br></br>
                 <input type="text" 
                        placeholder="Add a Description" 
-                       value={this.state.description}/><br></br>
+                       value={this.state.description}
+                       onChange={this.onChangeHandlerDescription}/><br></br>
                 <input type="submit" value="Update Info" />
             </form>
         </div>
