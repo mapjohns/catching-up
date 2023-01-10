@@ -22,10 +22,10 @@ class Comment extends Component {
 
             <div>
                 {/* `${this.props.match.url}/all/post/${this.props.postID}/comments/${this.props.commentID}` */}
-            <Route path={`${this.props.match.url}/${this.props.postID}/comments/${this.props.commentID}`} render={() => 
+            <Route path={`${this.props.match.url}/${this.props.postID}/comments/${this.props.commentID}/edit`} render={() => 
             <UpdateComment commentID={this.props.commentID} userID={this.props.userID} postID={this.props.postID} content={this.props.content}/>} />
 
-            <Link key={`post${this.props.postID}comments${this.props.commentID}`} to={`${this.props.match.url}/${this.props.postID}/comments/${this.props.commentID}`}>
+            <Link key={`post${this.props.postID}comments${this.props.commentID}`} to={`${this.props.match.url}/${this.props.postID}/comments/${this.props.commentID}/edit`}>
             Edit Comment
             </Link><br></br>
 
