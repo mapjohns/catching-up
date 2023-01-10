@@ -10,7 +10,7 @@ class Users extends Component {
                 <Link key={`User${user.user.id}`} to={`${this.props.match.url}/${user.user.id}`}>
                 {user.user.username}
                 </Link>
-                <Route path={`${this.props.match.url}/${user.user.id}`} render={() => <User userID={user.user.id}  
+                <Route exact path={`${this.props.match.url}/${user.user.id}`} render={() => <User userID={user.user.id}  
                                                                                   username={user.user.username} 
                                                                                   description={user.user.description}/> } />
         </div>
@@ -18,8 +18,16 @@ class Users extends Component {
                                                              )
 
     render() {
+        // debugger
+        const loggedUser  = this.props.loggedUser
         return(
-        this.renderUsers()
+            <div>
+                <p>Your Profile</p>
+                <Link key={`LoggedUser${ loggedUser.id}`} to={`${this.props.match.url}/${loggedUser.id}/edit`}> Your Profile </Link>
+                <Route path={`${this.props.match.url}/${loggedUser.id}/edit`} render={() => <User edit={"Edit"} user={loggedUser} userID={loggedUser.id} username={loggedUser.username} description={loggedUser.description} />} />
+                {/* <User loggedUser={loggedUser} /> */}
+                {this.renderUsers()}
+            </div>
         )
     }
 
