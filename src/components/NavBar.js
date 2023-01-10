@@ -1,25 +1,32 @@
 import React, { Component } from "react"
 import { NavLink } from "react-router-dom";
-
+import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
 
 class NavBar extends Component {
 
     render() {
         return(
-            <ul>
-            <li><NavLink to="/" exact>
-              Sign-up
-            </NavLink>
-            </li>
-            <li><NavLink to="/posts" exact>
-                All Posts
-            </NavLink>
-            </li>
-            <li><NavLink to={`/users`}>
-                Users
-            </NavLink>
-            </li>
-          </ul>
+            <Card 
+            bg={'info'}
+                  key={'primary'}
+                  text={'white'}
+                  >
+                <Card.Header>
+                <NavLink to="/" exact>
+                    Sign-up |
+                </NavLink>
+            
+                <NavLink to="/posts" exact>
+                    | All Posts |
+                </NavLink>
+
+                <NavLink to={`/users`}>
+                    | Users 
+                </NavLink>
+
+                </Card.Header>
+            </Card>
         )
     }
 
