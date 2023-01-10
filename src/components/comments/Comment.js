@@ -10,13 +10,13 @@ class Comment extends Component {
         // debugger
         return(
             <div>
-            <p>
                 <Link key={`User${this.props.userID}`} to={`/users/${this.props.userID}`}>
-                {this.props.username}
+                {this.props.username}:
                 </Link>
-                <Route path={`/users/${this.props.userID}`} render={(routerProps) => { <UsersContainer {...routerProps} /> }} />
-                {this.props.username}: 
-            {this.props.content}</p>
+                <Route path={`/users/${this.props.userID}`} render={(routerProps) => { <UsersContainer {...routerProps} /> }} /> 
+            <p>
+            {this.props.content}
+            </p>
 
             {this.props.loggedUserID === this.props.userID ? 
 
