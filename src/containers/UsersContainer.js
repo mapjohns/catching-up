@@ -12,7 +12,7 @@ class UsersContainer extends Component {
           <div>
             {/* Your ID number is: {this.props.userID} */}
             {/* <User user={this.props.user}/> */}
-            <Users loggedUser={this.props.user} allUsers={this.props.users}/>
+            <Users match={this.props.match} loggedUser={this.props.user} allUsers={this.props.users}/>
           </div>
         )
       }
