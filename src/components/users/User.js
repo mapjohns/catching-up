@@ -4,7 +4,8 @@ import UpdateUserInfo from './UpdateUserInfo';
 class User extends Component {
 
     userLoggedIn = () => {
-        if (this.props.user.loggedIn) {
+        // debugger
+        if (!!this.props.edit) {
             return <UpdateUserInfo user={this.props.user} />
         }
     }
@@ -15,7 +16,7 @@ class User extends Component {
             <div>
             <h2>Username: {this.props.username}</h2>
             <h3>About: {this.props.description}</h3>
-            {/* {this.userLoggedIn()} */}
+            {this.userLoggedIn()}
             </div>
         )
     }
