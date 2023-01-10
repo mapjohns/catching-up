@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import User from '../components/users/User' 
+import User from '../components/users/User' ;
+import Users from "../components/users/Users";
+
 
 class UsersContainer extends Component {
     
     render() {
+      // debugger
         return (
           <div>
-            Your ID number is: {this.props.userID}
-            <User user={this.props.user}/>
+            {/* Your ID number is: {this.props.userID} */}
+            {/* <User user={this.props.user}/> */}
+            <Users loggedUser={this.props.user} allUsers={this.props.users}/>
           </div>
         )
       }
