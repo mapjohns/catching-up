@@ -15,8 +15,8 @@ class NavBar extends Component {
                 All Posts
             </NavLink>
             </li>
-            <li><NavLink to="/profile" exact>
-                My Profile
+            <li><NavLink to={`/users`}>
+                Users
             </NavLink>
             </li>
           </ul>
