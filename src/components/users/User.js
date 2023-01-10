@@ -13,9 +13,9 @@ class User extends Component {
         // debugger
         return(
             <div>
-            <h2>Username: {this.props.user.username}</h2>
-            <h3>About: {this.props.user.description}</h3>
-            {this.userLoggedIn()}
+            <h2>Username: {this.props.username}</h2>
+            <h3>About: {this.props.description}</h3>
+            {/* {this.userLoggedIn()} */}
             </div>
         )
     }
