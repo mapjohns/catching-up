@@ -21,10 +21,10 @@ class App extends Component{
     return(
       <div>
     <Router>
-      <NavBar />
+      <NavBar userID={this.props.userID} />
       <Route exact path="/" render={() => <UserInput />} />
       <Route path="/posts" render={routerProps => <PostsContainer {...routerProps} /> } />
-      <Route path="/profile" render={routerProps => <UsersContainer {...routerProps} />} />
+      <Route path="/users" render={routerProps => <UsersContainer {...routerProps} />} />
     </Router>
       </div>
     )
