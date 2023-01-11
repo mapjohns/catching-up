@@ -28,15 +28,15 @@ class Post extends Component {
                 {this.props.loggedUserID === this.props.userId ? 
                 <div>
                 <Card.Footer>
-                <Link key={`post${this.props.postId}edit`} to={`${this.props.match.url}/post/${this.props.postId}/edit`}>
+                <Link key={`post${this.props.postId}edit`} to={`${this.props.match.url}/${this.props.postId}/edit`}>
                 Edit Post
                 </Link>
-                <Route path={`${this.props.match.url}/post/${this.props.postId}/edit`} render={() => <PostInput postID={this.props.postId} edit={"Edit"}/> } /><br></br>
+                <Route path={`${this.props.match.url}/${this.props.postId}/edit`} render={() => <PostInput postID={this.props.postId} edit={"Edit"}/> } /><br></br>
 
-                <Link key={`post${this.props.postId}delete`} to={`${this.props.match.url}/post/${this.props.postId}/delete`}>
+                <Link key={`post${this.props.postId}delete`} to={`${this.props.match.url}/${this.props.postId}/delete`}>
                 Delete Post
                 </Link>
-                <Route path={`${this.props.match.url}/post/${this.props.postId}/delete`} render={() => this.props.deletePost(this.props.postId)} />
+                <Route path={`${this.props.match.url}/${this.props.postId}/delete`} render={() => this.props.deletePost(this.props.postId)} />
                 </Card.Footer>
                 </div>
                 :
