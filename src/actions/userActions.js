@@ -9,6 +9,7 @@ function fetchUsers() {
 function createUser(test) {
     let newVar = test
     return (dispatch) => {
+        let newUser
         fetch('http://localhost:3000/users', {
             method: "POST",
             headers: {
@@ -23,7 +24,9 @@ function createUser(test) {
                 })
             })
         .then(resp => resp.json())
-        .then((user) => dispatch( {type: "SAVE_USER_ID", user: user }))
+        .then(data => newUser=data)
+        .then((newUser) => dispatch( {type: "SAVE_USER_ID", user: newUser }))
+        .then((newUser) => dispatch( {type: "ADD_CREATED_USER_STATE", user: newUser }))
     }
 }
 
