@@ -11,7 +11,8 @@ class Posts extends Component {
                               postId={post.post_id}
                               userId={post.user.id}
                               loggedUserID={this.props.loggedUserID}
-                              deletePost={this.props.deletePost}/>
+                              deletePost={this.props.deletePost}
+                              />
                               )
 
     render() {
