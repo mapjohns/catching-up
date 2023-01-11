@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import Post from "./Post"
-// import CommentsContainer from "../../containers/CommentsContainer"
 
 class Posts extends Component {
 
