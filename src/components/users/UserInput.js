@@ -109,6 +109,7 @@ class UserInput extends Component {
             : 
                 <div>
                 <form onSubmit={this.onSubmitHandlerLogOut}>
+                    <h6>Welcome! You are now logged in. Feel free to browser posts or leave one yourself!</h6>
                     <input type="submit" value="Log out" />
                 </form>
                 </div>
