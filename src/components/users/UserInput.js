@@ -102,9 +102,9 @@ class UserInput extends Component {
                     <Card.Body>
                     {/* <h6>Your ID number is: {this.props.userID}</h6> */}
                     <form onSubmit={this.onSubmitHandler}>
-                    <Card.Text><h4>Username:</h4></Card.Text>
+                    <Card.Text>Username:</Card.Text>
                         <input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
-                    <Card.Text><h4>Password:</h4></Card.Text>
+                    <Card.Text>Password:</Card.Text>
                         <input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
                         <br></br>
                         <input type="submit" value="Sign-up"/>
@@ -119,9 +119,9 @@ class UserInput extends Component {
                     <Card.Header><h5>Log in with an existing account</h5></Card.Header>
                     <Card.Body>
                     <form onSubmit={this.onSubmitHandlerLogin}>
-                    <Card.Text><h4>Username:</h4></Card.Text>
+                    <Card.Text>Username:</Card.Text>
                         <input onChange={this.onChangeHandlerLoginUsername} value={this.state.login.username} type="text"/>
-                    <Card.Text><h4>Password:</h4></Card.Text>
+                    <Card.Text>Password:</Card.Text>
                         <input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
                         <br></br>
                         <input type="submit" value="Log in"/>
