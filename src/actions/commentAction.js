@@ -7,8 +7,7 @@ function fetchComments() {
 }
 
 
-function createComment(test) {
-    let newVar = test
+function createComment(comment) {
     // debugger
     return (dispatch) => {
         fetch('http://localhost:3000/comments', {
@@ -19,9 +18,9 @@ function createComment(test) {
             },
                 body: JSON.stringify({
                     comment: {
-                    content: test.content,
-                    user_id: test.userID,
-                    post_id: test.postID
+                    content: comment.content,
+                    user_id: comment.userID,
+                    post_id: comment.postID
                     }
                 })
             })
@@ -30,10 +29,10 @@ function createComment(test) {
     }
 }
 
-function updateComment(test) {
+function updateComment(comment) {
     // debugger
     return (dispatch) => {
-        fetch(`http://localhost:3000/comments/${test.commentID}`, {
+        fetch(`http://localhost:3000/comments/${comment.commentID}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -41,9 +40,9 @@ function updateComment(test) {
             },
                 body: JSON.stringify({
                     comment: {
-                    content: test.content,
-                    user_id: test.userID,
-                    post_id: test.postID
+                    content: comment.content,
+                    user_id: comment.userID,
+                    post_id: comment.postID
                     }
                 })
             })

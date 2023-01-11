@@ -6,8 +6,7 @@ function fetchPosts() {
     }
 }
 
-function createPost(test) {
-    let newVar = test
+function createPost(post) {
     // debugger
     return (dispatch) => {
         fetch('http://localhost:3000/posts', {
@@ -18,8 +17,8 @@ function createPost(test) {
             },
                 body: JSON.stringify({
                     post: {
-                    message: test.message,
-                    user_id: test.user
+                    message: post.message,
+                    user_id: post.user
                     }
                 })
             })
@@ -28,11 +27,10 @@ function createPost(test) {
     }
 }
 
-function editPost(test) {
-    let newVar = test
+function editPost(post) {
     // debugger
     return (dispatch) => {
-        fetch(`http://localhost:3000/posts/${test.post}`, {
+        fetch(`http://localhost:3000/posts/${post.post}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -40,9 +38,9 @@ function editPost(test) {
             },
                 body: JSON.stringify({
                     post: {
-                    post_id: test.post,
-                    message: test.message,
-                    user_id: test.user,
+                    post_id: post.post,
+                    message: post.message,
+                    user_id: post.user,
                     }
                 })
             })
