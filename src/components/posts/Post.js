@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import CommentInput from "../comments/CommentInput";
 import CommentsContainer from "../../containers/CommentsContainer";
 import PostInput from "./PostInput";
+import Card from 'react-bootstrap/Card';
+
 
 class Post extends Component {
 
@@ -11,8 +13,8 @@ class Post extends Component {
         // debugger
         return(
             <div>
-            <h4>{this.props.username}</h4>
-            <p>{this.props.post}</p>
+            <Card>
+            <Card.Header as="h5">{this.props.username}: {this.props.post}</Card.Header>
             {this.props.loggedUserID === this.props.userId ? 
             <div>
             <Link key={`post${this.props.postId}edit`} to={`${this.props.match.url}/post/${this.props.postId}/edit`}>
@@ -40,6 +42,7 @@ class Post extends Component {
             </Link>
             <Route exact path={`${this.props.match.url}/${this.props.postId}/comments/new`} render={() => <CommentInput postID={this.props.postId} /> } />
             <br></br>
+            </Card>
             </div>
         )
     }
