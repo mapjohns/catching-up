@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { createUser } from '../../actions/userActions';
 import { loginUser } from "../../actions/userLoginAction";
-
+import Card from 'react-bootstrap/Card';
 
 class UserInput extends Component {
 
@@ -88,25 +88,48 @@ class UserInput extends Component {
     render() {
         return(
             this.props.loggedIn === undefined ? 
-                <div><h2>It's time to catch-up!</h2>
+                <div>
+                    <h2>It's time to catch-up!</h2>
                     <h5>Please Sign-up or Log in below!</h5>
+                <Card 
+                    bg={"light"}
+                    style={{ width: '15rem' }}
+
+                >
+                    <Card.Header>
+                        <h5>Create an Account</h5>
+                    </Card.Header>
+                    <Card.Body>
+                    {/* <h6>Your ID number is: {this.props.userID}</h6> */}
+                    <form onSubmit={this.onSubmitHandler}>
+                    <Card.Text><h4>Username:</h4></Card.Text>
+                        <input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
+                    <Card.Text><h4>Password:</h4></Card.Text>
+                        <input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
+                        <br></br>
+                        <input type="submit" value="Sign-up"/>
+                    </form>
+                    </Card.Body>
+                </Card>
                 <br></br>
-                <h5>Create an Account</h5>
-                <h6>Your ID number is: {this.props.userID}</h6>
-                <form onSubmit={this.onSubmitHandler}>
-                    <h4>Username:</h4><input onChange={this.onChangeHandlerUsername} value={this.state.create.username} type="text"/>
-                    <h4>Password:</h4><input onChange={this.onChangeHandlerPassword} value={this.state.create.password} type="password"/>
-                    <br></br>
-                    <input type="submit" value="Sign-up"/>
-                </form>
-                <br></br>
-                <h5>Log in with an existing account</h5>
-                <form onSubmit={this.onSubmitHandlerLogin}>
-                    <h4>Username:</h4><input onChange={this.onChangeHandlerLoginUsername} value={this.state.login.username} type="text"/>
-                    <h4>Password:</h4><input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
-                    <br></br>
-                    <input type="submit" value="Log in"/>
-                </form></div>
+                <Card
+                    bg={"light"}
+                    style={{ width: '15rem' }}
+                >
+                    <Card.Header><h5>Log in with an existing account</h5></Card.Header>
+                    <Card.Body>
+                    <form onSubmit={this.onSubmitHandlerLogin}>
+                    <Card.Text><h4>Username:</h4></Card.Text>
+                        <input onChange={this.onChangeHandlerLoginUsername} value={this.state.login.username} type="text"/>
+                    <Card.Text><h4>Password:</h4></Card.Text>
+                        <input onChange={this.onChangeHandlerLoginPassword} value={this.state.login.password} type="password"/>
+                        <br></br>
+                        <input type="submit" value="Log in"/>
+                    </form>
+                    </Card.Body>
+                </Card>
+                </div>
+                
             : 
                 <div>
                 <form onSubmit={this.onSubmitHandlerLogOut}>
