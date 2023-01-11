@@ -88,7 +88,8 @@ class UserInput extends Component {
     render() {
         return(
             this.props.loggedIn === undefined ? 
-                <div><h4>Please Sign-up or Log in below!</h4>
+                <div><h2>It's time to catch-up!</h2>
+                    <h5>Please Sign-up or Log in below!</h5>
                 <br></br>
                 <h5>Create an Account</h5>
                 <h6>Your ID number is: {this.props.userID}</h6>
@@ -109,7 +110,7 @@ class UserInput extends Component {
             : 
                 <div>
                 <form onSubmit={this.onSubmitHandlerLogOut}>
-                    <h6>Welcome! You are now logged in. Feel free to browser posts or leave one yourself!</h6>
+                    <h6>Welcome! You are now logged in. Feel free to browse posts or leave one yourself!</h6>
                     <input type="submit" value="Log out" />
                 </form>
                 </div>
