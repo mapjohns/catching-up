@@ -14,7 +14,7 @@ class NavBar extends Component {
                   >
                 <Card.Header>
                 <NavLink to="/" exact>
-                    Sign-up |
+                    Home |
                 </NavLink>
             
                 <NavLink to="/posts" exact>
