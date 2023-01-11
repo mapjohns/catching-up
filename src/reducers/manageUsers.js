@@ -18,6 +18,7 @@ const usersReducer = (state = { user: [], users: [] }, action) => {
           user: [],
         };
       case "UPDATE_USER_INFO":
+        // debugger
         return {
           ...state,
           user: {
@@ -25,8 +26,23 @@ const usersReducer = (state = { user: [], users: [] }, action) => {
                   username: action.user.username,
                   description: action.user.description,
                   loggedIn: true
-          }
+          },
         };
+        case "UPDATE_USERS_INFO_STATE":
+          // debugger
+          return  {...state, users: state.users.map((user) => 
+            {if (user.user.id === action.user.user.id) 
+                                          {user.user.username = action.user.user.username;
+                                            user.user.description = action.user.user.description;
+                return user}
+            else {
+                return user
+            }
+        }
+)
+    };
+          ;
+
       case "ADD_USERS_STATE":
         const users = action.users.map(user => ({user: {id: user.id, 
                                                  username: user.username,
