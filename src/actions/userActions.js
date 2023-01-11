@@ -32,6 +32,7 @@ function createUser(test) {
 
 function updateUser(test) {
     // debugger
+    let newUser
     return (dispatch) => {
         fetch(`http://localhost:3000/users/${test.userID}`, {
             method: "PATCH",
@@ -48,7 +49,9 @@ function updateUser(test) {
                 })
             })
         .then(resp => resp.json())
-        .then((user) => dispatch( {type: "UPDATE_USER_INFO", user: user }))
+        .then(data => newUser=data)
+        .then((newUser) => dispatch( {type: "UPDATE_USER_INFO", user: newUser }))
+        .then((newUser) => dispatch( {type: "UPDATE_USERS_INFO_STATE", user: newUser }))
     }
 }
 
