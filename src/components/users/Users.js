@@ -16,8 +16,8 @@ class Users extends Component {
                                 {user.user.username}
                             </Link>
                             <Route exact path={`${this.props.match.url}/${user.user.id}`} render={() => 
-                                                                              <User userID={user.user.id}
-                                                                                    key={`user${user.user.id}`}  
+                                                                              <User key={`user${user.user.id}user`}  
+                                                                                    userID={user.user.id}
                                                                                     username={user.user.username} 
                                                                                     description={user.user.description}/> } />
                         </ListGroup.Item>
