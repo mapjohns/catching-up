@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     def update
         post = Post.find_by(id: post_params[:post_id])
         post.update(:message => post_params[:message])
-        render json: post, include: [:user], except: [:password_digest,, :created_at, :updated_at]
+        render json: post, include: [:user], except: [:password_digest, :created_at, :updated_at]
     end
 
     def destroy
