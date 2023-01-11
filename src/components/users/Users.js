@@ -15,7 +15,9 @@ class Users extends Component {
                             <Link key={`User${user.user.id}`} to={`${this.props.match.url}/${user.user.id}`}>
                                 {user.user.username}
                             </Link>
-                            <Route exact path={`${this.props.match.url}/${user.user.id}`} render={() => <User userID={user.user.id}  
+                            <Route exact path={`${this.props.match.url}/${user.user.id}`} render={() => 
+                                                                              <User userID={user.user.id}
+                                                                                    key={`user${user.user.id}`}  
                                                                                     username={user.user.username} 
                                                                                     description={user.user.description}/> } />
                         </ListGroup.Item>
@@ -35,7 +37,7 @@ class Users extends Component {
                     <Card.Header>
                         <Link key={`LoggedUser${ loggedUser.id}`} to={`${this.props.match.url}/${loggedUser.id}/edit`}> My Profile </Link>
                     </Card.Header>
-                    <Route path={`${this.props.match.url}/${loggedUser.id}/edit`} render={() => <User edit={"Edit"} user={loggedUser} userID={loggedUser.id} username={loggedUser.username} description={loggedUser.description} />} />
+                    <Route path={`${this.props.match.url}/${loggedUser.id}/edit`} render={() => <User edit={"Edit"} key={`loggedUser${loggedUser.id}`} user={loggedUser} userID={loggedUser.id} username={loggedUser.username} description={loggedUser.description} />} />
                 </Card>
                 <br></br>
                 <br></br>
