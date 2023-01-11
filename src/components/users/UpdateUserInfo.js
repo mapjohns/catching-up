@@ -6,7 +6,7 @@ class UpdateUserInfo extends Component {
 
     state = {
         username: this.props.user.username,
-        description: this.props.user.description,
+        description: "",
         userID: this.props.user.id
     }
 
