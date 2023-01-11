@@ -1,3 +1,18 @@
+Hello! Welcome to Catching Up! This is an application that essentially functions like a messaging board. You can sign/create an account, then post and respond to posts. There is also a users section as well to update your info or see other user's, too.
+
+How to get up and running:
+
+1. Git Clone this project and then cd to where that was cloned
+2. cd into catching-up-api/
+3. Run bundle install
+4. Run rails db:migrate
+5. Run rails s 
+6. Open a new terminal and then cd into catching-up
+7. Run npm install
+8. Run npm start
+9. When asked if you'd like to run the app on another port instead, type Y
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
