@@ -28,7 +28,6 @@ const usersReducer = (state = { user: [], users: [] }, action) => {
           }
         };
       case "ADD_USERS_STATE":
-        // debugger
         const users = action.users.map(user => ({user: {id: user.id, 
                                                  username: user.username,
                                                  description: user.description}
@@ -37,6 +36,17 @@ const usersReducer = (state = { user: [], users: [] }, action) => {
           ...state,
           users: state.users.concat(users)
         };
+      case "ADD_CREATED_USER_STATE":
+        const user = {user: {id: action.user.user.id,
+          username: action.user.user.username,
+          description: action.user.user.description}
+        }
+        // debugger
+        return {
+          ...state,
+          users: state.users.concat(user)
+        }
+      ;
       default:
         return state
     };
